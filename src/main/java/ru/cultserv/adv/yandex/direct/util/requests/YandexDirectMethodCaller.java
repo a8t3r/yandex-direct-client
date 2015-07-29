@@ -8,7 +8,9 @@ import ru.cultserv.adv.util.AsyncClientFactory;
 import ru.cultserv.adv.yandex.direct.AuthToken;
 import ru.cultserv.adv.yandex.direct.methods.MethodName;
 
-public class YandexDirectMethodCaller {
+import java.io.Closeable;
+
+public class YandexDirectMethodCaller implements Closeable {
 	
 	private final AuthToken token;
 	private final ApiRequestExecutor executor;
@@ -52,4 +54,8 @@ public class YandexDirectMethodCaller {
 		return prepared(token, AsyncClientFactory.getClient());
 	}
 
+	@Override
+	public void close() {
+		executor.close();
+	}
 }

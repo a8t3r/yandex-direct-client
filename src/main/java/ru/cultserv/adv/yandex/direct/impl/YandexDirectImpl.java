@@ -63,4 +63,9 @@ public class YandexDirectImpl implements YandexDirect {
     private <T> T create(Class<T> targetInterface) {
 		return ProxyBuilder.create(targetInterface, caller);
 	}
+
+	@Override
+	public void close() {
+		caller.close();
+	}
 }

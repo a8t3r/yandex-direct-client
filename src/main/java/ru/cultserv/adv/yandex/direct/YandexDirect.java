@@ -2,7 +2,9 @@ package ru.cultserv.adv.yandex.direct;
 
 import ru.cultserv.adv.yandex.direct.methods.*;
 
-public interface YandexDirect {
+import java.io.Closeable;
+
+public interface YandexDirect extends Closeable {
 
 	/**
 	 * Доступ к методам для работы с рекламными кампаниями

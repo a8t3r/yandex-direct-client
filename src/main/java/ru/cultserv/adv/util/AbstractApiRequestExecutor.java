@@ -1,6 +1,7 @@
 package ru.cultserv.adv.util;
 
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.Futures;
 import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.Request;
@@ -21,6 +22,8 @@ public abstract class AbstractApiRequestExecutor implements ApiRequestExecutor {
 
     @Override
 	public ApiResponse execute(ApiRequest request) {
+		Preconditions.checkState(!client.isClosed(), "request executor is closed");
+
 		Future<ApiResponse> future = asFuture(request);
 		try {
 			return future.get();
@@ -60,7 +63,12 @@ public abstract class AbstractApiRequestExecutor implements ApiRequestExecutor {
 	protected void withParams(final ApiRequestParams params, final RequestBuilder builder) {
 		builder.setBody(Json.toJson(params).toString());
 	}
-	
+
+	@Override
+	public void close() {
+		client.close();
+	}
+
 	protected abstract ApiResponse process(Response response);
 
 }
