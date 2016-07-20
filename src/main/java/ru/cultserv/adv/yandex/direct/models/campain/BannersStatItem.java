@@ -1,8 +1,7 @@
 package ru.cultserv.adv.yandex.direct.models.campain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.Date;
+import org.joda.time.LocalDate;
 
 /**
  * @author Sergey Zudin
@@ -15,13 +14,13 @@ public class BannersStatItem {
      * Выводится в отчет, если во входном параметре GroupByColumns указано значение «clDate».
      */
     @JsonProperty("StartDate")
-    public Date stat_date;
+    public LocalDate stat_date;
 
     /**
      * Идентификатор объявления.
      */
     @JsonProperty("BannerID")
-    public Integer banner_id;
+    public Long banner_id;
 
     /**
      * Идентификатор фразы.
@@ -40,7 +39,7 @@ public class BannersStatItem {
      * информацию о рубрике Яндекс.Каталога.
      */
     @JsonProperty("RubricID")
-    public Integer rubric_id;
+    public Long rubric_id;
 
     /**
      * Идентификатор ретаргетинга.
@@ -48,7 +47,7 @@ public class BannersStatItem {
      * информацию о ретаргетинге.
      */
     @JsonProperty("RetargetingID")
-    public Integer retargering_id;
+    public Long retargering_id;
 
     /**
      * Ключевые слова, или название рубрики Яндекс.Каталога, или наименование условия ретаргетинга, или значение

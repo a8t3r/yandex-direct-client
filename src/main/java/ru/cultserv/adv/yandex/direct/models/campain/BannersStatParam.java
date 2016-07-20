@@ -1,10 +1,10 @@
 package ru.cultserv.adv.yandex.direct.models.campain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.joda.time.LocalDate;
 import ru.cultserv.adv.yandex.direct.models.Currency;
 import ru.cultserv.adv.yandex.direct.models.util.StatusBoolean;
 
-import java.util.Date;
 import java.util.Set;
 
 /**
@@ -23,13 +23,13 @@ public class BannersStatParam {
      * Начальная дата отчетного периода, YYYY-MM-DD. Период не должен превышать семь дней.
      */
     @JsonProperty("StartDate")
-    public Date start_date;
+    public LocalDate start_date;
 
     /**
      * Конечная дата отчетного периода, YYYY-MM-DD. Период не должен превышать семь дней.
      */
     @JsonProperty("EndDate")
-    public Date end_date;
+    public LocalDate end_date;
 
     /**
      * Названия полей, выводимых в отчет дополнительно к статистическим данным.

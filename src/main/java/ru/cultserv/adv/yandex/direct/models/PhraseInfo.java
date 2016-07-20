@@ -1,8 +1,7 @@
 package ru.cultserv.adv.yandex.direct.models;
 
-import ru.cultserv.adv.yandex.direct.models.util.StatusBoolean;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+import ru.cultserv.adv.yandex.direct.models.util.StatusBoolean;
 
 public class PhraseInfo {
 
@@ -93,7 +92,23 @@ public class PhraseInfo {
 	 */
 	@JsonProperty("UserParams")
 	public PhraseUserParams user_params;
-	
+
+	/**
+	 * Количество кликов по всем объявлениям группы, показанным на поиске по данной фразе.
+	 * Рассчитывается за 28 дней от текущей даты. Для расчета отбираются дни,
+	 * в течение которых был хотя бы один клик по объявлению.
+	 */
+	@JsonProperty("Clicks")
+	public Integer clicks;
+
+	/**
+	 * Количество показов всех объявлений группы по данной фразе на поиске.
+	 * Рассчитывается за 28 дней от текущей даты. Для расчета отбираются дни,
+	 * в течение которых был хотя бы один показ объявления по данной фразе.
+	 */
+	@JsonProperty("Shows")
+	public Integer shows;
+
 	/**
 	 * Валюта, в которой указаны ставки.
 	 * Значение должно совпадать с валютой кампании.

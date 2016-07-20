@@ -26,6 +26,7 @@ public class YandexDirectFactory {
     }
 
     public interface FinalBuilder {
+        FinalBuilder timeout(int millis);
         YandexDirect build();
     }
 
@@ -50,6 +51,13 @@ public class YandexDirectFactory {
         @Override
         public FinalBuilder proxy(ProxyServer server) {
             builder.setProxyServer(server);
+            return this;
+        }
+
+        @Override
+        public FinalBuilder timeout(int millis) {
+            builder.setRequestTimeoutInMs(millis);
+            builder.setConnectionTimeoutInMs(millis);
             return this;
         }
 

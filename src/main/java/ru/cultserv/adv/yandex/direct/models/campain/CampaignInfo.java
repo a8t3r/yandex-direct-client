@@ -1,10 +1,10 @@
 package ru.cultserv.adv.yandex.direct.models.campain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.joda.time.LocalDate;
 import ru.cultserv.adv.yandex.direct.models.Currency;
 import ru.cultserv.adv.yandex.direct.models.util.StatusBoolean;
 
-import java.util.Date;
 import java.util.List;
 
 public class CampaignInfo {
@@ -22,7 +22,7 @@ public class CampaignInfo {
 	public String fio;
 
 	@JsonProperty("StartDate")
-	public Date start_date;
+	public LocalDate start_date;
 
 	@JsonProperty("Sum")
 	public float sum;
@@ -92,7 +92,7 @@ public class CampaignInfo {
 
 	@JsonProperty("StatusOpenStat")
 	public StatusBoolean status_open_stat;
-	
+
 	@JsonProperty("ConsiderTimeTarget")
 	public StatusBoolean consider_time_target;
 

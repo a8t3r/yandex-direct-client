@@ -9,13 +9,11 @@ import com.ning.http.client.AsyncHttpClientConfig;
  */
 public class AsyncClientFactory {
 
-    private static final AsyncHttpClient CLIENT = createHttpClient(new AsyncHttpClientConfig.Builder().build());
-
     public static AsyncHttpClient createHttpClient(AsyncHttpClientConfig config) {
         return new AsyncHttpClient(config);
     }
 
     public static AsyncHttpClient getClient() {
-        return CLIENT;
+        return createHttpClient(new AsyncHttpClientConfig.Builder().build());
     }
 }

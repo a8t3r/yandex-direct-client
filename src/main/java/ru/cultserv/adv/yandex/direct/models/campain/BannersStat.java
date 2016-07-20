@@ -1,8 +1,7 @@
 package ru.cultserv.adv.yandex.direct.models.campain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.Date;
+import org.joda.time.LocalDate;
 
 /**
  * @author Sergey Zudin
@@ -20,13 +19,13 @@ public class BannersStat {
      * Начальная дата отчетного периода, YYYY-MM-DD.
      */
     @JsonProperty("StartDate")
-    public Date start_date;
+    public LocalDate start_date;
 
     /**
      * Конечная дата отчетного периода, YYYY-MM-DD.
      */
     @JsonProperty("EndDate")
-    public Date end_date;
+    public LocalDate end_date;
 
     /**
      * Массив объектов BannersStatItem. Каждый объект содержит статистику по одной фразе за один день отчетного периода.
