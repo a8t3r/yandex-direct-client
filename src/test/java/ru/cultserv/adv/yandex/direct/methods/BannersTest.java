@@ -1,5 +1,6 @@
 package ru.cultserv.adv.yandex.direct.methods;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import ru.cultserv.adv.yandex.direct.filters.BannersFilterParam;
 import ru.cultserv.adv.yandex.direct.impl.YandexDirectImpl;
@@ -14,6 +15,7 @@ import java.util.List;
 
 import static org.fest.assertions.Assertions.assertThat;
 
+@Ignore
 public class BannersTest {
 
 	private Banners banners = new YandexDirectImpl(AuthTokens.fake()).banners();

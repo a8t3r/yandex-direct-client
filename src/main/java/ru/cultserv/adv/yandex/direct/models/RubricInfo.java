@@ -1,7 +1,7 @@
 package ru.cultserv.adv.yandex.direct.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.base.Objects;
+import com.google.common.base.MoreObjects;
 
 /**
  * @author Alexandr Kolosov
@@ -29,7 +29,7 @@ public class RubricInfo {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
+		return MoreObjects.toStringHelper(this)
 				.add("rubric_id", rubric_id)
 				.add("parent_id", parent_id)
 				.add("url", url)

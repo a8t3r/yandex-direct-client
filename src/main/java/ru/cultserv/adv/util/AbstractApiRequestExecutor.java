@@ -1,6 +1,5 @@
 package ru.cultserv.adv.util;
 
-import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.Futures;
 import com.ning.http.client.AsyncHttpClient;
@@ -8,7 +7,6 @@ import com.ning.http.client.Request;
 import com.ning.http.client.RequestBuilder;
 import com.ning.http.client.Response;
 
-import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -35,17 +33,8 @@ public abstract class AbstractApiRequestExecutor implements ApiRequestExecutor {
 	@Override
 	public Future<ApiResponse> asFuture(ApiRequest request) {
 		Request http_request = convertToHttpRequest(request);
-		try {
 			com.ning.http.client.ListenableFuture<Response> future = client.executeRequest(http_request);
-			return Futures.lazyTransform(future, new Function<Response, ApiResponse>() {
-				@Override
-				public ApiResponse apply(Response response) {
-					return process(response);
-				}
-			});
-		} catch (IOException e) {
-			return Futures.immediateFailedFuture(new IllegalStateException("illegal request"));
-		}
+		return Futures.lazyTransform(future, this::process);
 	}
 	
 	private Request convertToHttpRequest(ApiRequest request) {

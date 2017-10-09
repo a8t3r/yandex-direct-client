@@ -24,6 +24,8 @@ public interface YandexDirect extends Closeable {
 
     WordStats wordstats();
 
+    AccountManagement accountManagement();
+
 	@Override
 	void close();
 }

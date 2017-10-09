@@ -1,5 +1,6 @@
 package ru.cultserv.adv.yandex.direct.methods;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import ru.cultserv.adv.yandex.direct.filters.NewForecastInfo;
 import ru.cultserv.adv.yandex.direct.impl.YandexDirectImpl;
@@ -14,6 +15,7 @@ import java.util.concurrent.locks.LockSupport;
  * @author Alexandr Kolosov
  * @since 7/3/14
  */
+@Ignore
 public class ForecastsTest {
 
 	private Forecasts forecasts = new YandexDirectImpl(AuthTokens.fake()).forecasts();

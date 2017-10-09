@@ -67,7 +67,12 @@ public class YandexDirectImpl implements YandexDirect {
         return create(WordStats.class);
     }
 
-    private <T> T create(Class<T> targetInterface) {
+	@Override
+	public AccountManagement accountManagement() {
+		return create(AccountManagement.class);
+	}
+
+	private <T> T create(Class<T> targetInterface) {
 		return ProxyBuilder.create(targetInterface, caller);
 	}
 

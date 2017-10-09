@@ -1,7 +1,7 @@
 package ru.cultserv.adv.yandex.direct.models.banner;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.base.Objects;
+import com.google.common.base.MoreObjects;
 import ru.cultserv.adv.yandex.direct.models.ContactInfo;
 import ru.cultserv.adv.yandex.direct.models.PhraseInfo;
 import ru.cultserv.adv.yandex.direct.models.SiteLink;
@@ -153,7 +153,7 @@ public class BannerInfo {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
+		return MoreObjects.toStringHelper(this)
 				.add("banner_id", banner_id)
 				.add("title", title)
 				.toString();

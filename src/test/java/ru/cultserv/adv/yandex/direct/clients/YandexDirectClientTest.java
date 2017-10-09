@@ -1,6 +1,7 @@
 package ru.cultserv.adv.yandex.direct.clients;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import ru.cultserv.adv.yandex.direct.YandexDirect;
 import ru.cultserv.adv.yandex.direct.impl.YandexDirectImpl;
@@ -20,7 +21,7 @@ public class YandexDirectClientTest {
 		assertNotNull(campaigns);
 	}
 
-	@Test
+	@Test  @Ignore
 	public void testPing() {
 		Utils utils = direct.utils();
 		Assert.assertEquals(1, utils.ping());

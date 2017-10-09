@@ -2,6 +2,7 @@ package ru.cultserv.adv.yandex.direct.methods;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.google.common.base.Function;
+import ru.cultserv.adv.yandex.direct.models.AccountManagementResponse;
 import ru.cultserv.adv.yandex.direct.models.PhraseInfo;
 import ru.cultserv.adv.yandex.direct.models.RegionInfo;
 import ru.cultserv.adv.yandex.direct.models.RubricInfo;
@@ -69,7 +70,9 @@ public enum MethodName {
 	DeleteWordstatReport(int.class, Constants.SINGLE_PARAM_CONVERTER),
 	GetWordstatReport(new TypeReference<List<WordstatReportInfo>>() {}, Constants.SINGLE_PARAM_CONVERTER),
 	GetWordstatReportList(new TypeReference<List<WordstatReportStatusInfo>>() {}),
-	GetKeywordsSuggestion(new TypeReference<List<String>>() {}, Constants.SINGLE_PARAM_CONVERTER);
+	GetKeywordsSuggestion(new TypeReference<List<String>>() {}, Constants.SINGLE_PARAM_CONVERTER),
+
+	AccountManagement(new TypeReference<AccountManagementResponse>() {}, Constants.SINGLE_PARAM_CONVERTER);
 
 	private TypeReference<?> return_type;
 	private Class<?> return_class;

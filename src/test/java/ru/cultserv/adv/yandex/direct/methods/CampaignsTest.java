@@ -1,5 +1,6 @@
 package ru.cultserv.adv.yandex.direct.methods;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import ru.cultserv.adv.yandex.direct.filters.CampaignsFilterParam;
 import ru.cultserv.adv.yandex.direct.impl.YandexDirectImpl;
@@ -11,6 +12,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+@Ignore
 public class CampaignsTest {
 
 	private Campaigns campaigns = new YandexDirectImpl(AuthTokens.fake()).campaigns();
